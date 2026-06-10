@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WhatAreRivalsScripts | Verified Scripts</title>
+    <title>WhatAreRivalsScripts | Legit List</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -56,12 +56,11 @@
             </header>
 
             <div id="scriptContainer" class="max-w-4xl mx-auto flex flex-col gap-10">
-                <!-- Initial Loader -->
                 <div class="flex justify-center py-20"><span class="loader"></span></div>
             </div>
         </main>
 
-        <!-- Filter Sidebar -->
+        <!-- Sidebar -->
         <aside id="filterSidebar" class="p-8 hidden md:block closed">
             <div class="w-[280px]">
                 <h3 class="text-sm font-black uppercase tracking-widest text-slate-400 mb-8">Settings</h3>
@@ -88,10 +87,12 @@
         </aside>
     </div>
 
-    <footer class="p-10 border-t border-white/5 text-center opacity-20 text-[10px] font-bold tracking-[0.5em] uppercase">WhatAreRivalsScripts &copy; 2026</footer>
+    <!-- UPDATED FOOTER -->
+    <footer class="p-10 border-t border-white/5 text-center opacity-20 text-[10px] font-bold tracking-[0.5em] uppercase">
+        WhatAreRivalsScripts &copy; 2026
+    </footer>
 
     <script>
-        // Updated Gist URL for automatic updates
         const GIST_URL = "https://gist.githubusercontent.com/WhatAreRivalsScripts/e0e92bc331bbd3fb39d2b18f0e0bfec2/raw/scripts";
         let allScripts = [];
 
@@ -101,13 +102,11 @@
                 allScripts = await res.json();
                 applyFilters();
             } catch (e) { 
-                document.getElementById('scriptContainer').innerHTML = `<div class="text-center py-20"><p class="text-red-500 font-bold">Failed to sync with database. Check your Gist format.</p></div>`; 
+                document.getElementById('scriptContainer').innerHTML = `<div class="text-center py-20"><p class="text-red-500 font-bold">Failed to sync database.</p></div>`; 
             }
         }
 
-        function toggleSidebar() { 
-            document.getElementById('filterSidebar').classList.toggle('closed'); 
-        }
+        function toggleSidebar() { document.getElementById('filterSidebar').classList.toggle('closed'); }
 
         function applyFilters() {
             const term = document.getElementById('searchBar').value.toLowerCase();
